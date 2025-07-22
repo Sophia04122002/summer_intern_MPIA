@@ -1,0 +1,23 @@
+likelihood:
+  external:
+    module: /Users/sophiatonelli/Desktop/w6_code/finding_zetas_ES_PC/posterior.py
+    class: BSDlikelihood
+
+params:
+  zeta:
+    prior: {min: 1, max: 100}
+    ref: 10
+    proposal: 2
+  Mmin:
+    prior: {min: 1e8, max: 1e10}
+    ref: 1e9
+    proposal: 1e8
+sampler:
+  mcmc:
+    max_tries: 10000
+    Rminus1_stop: 0.05
+    burn_in: 0.2
+    learn_proposal: true
+    output_every: 20
+
+output: chains/mcmc_output
